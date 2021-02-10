@@ -38,4 +38,4 @@ If you need to include passwords or other information that should not be viewabl
 
     ![Secret Information](https://raw.githubusercontent.com/sanders41/tbd-example/main/images/secret-info.png)
 
-    ![Secret in YAML file](https://raw.githubusercontent.com/sanders41/tbd-example/main/images/images/secret-in-yaml.png)
+    ![Secret in YAML file](https://raw.githubusercontent.com/sanders41/tbd-example/main/images/secret-in-yaml.png)
