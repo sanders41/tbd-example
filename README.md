@@ -10,6 +10,8 @@ The files defining what is run for CI/CD are found in the [.github/workflows](ht
 
 In these example files linting and testing (the CI part) are controlled by the linting.yaml and testing.yaml files and will be run automatically any time there is either a push to the main branch, or a pull request to the main branch is created. For the testing, tests will be run on Mac, Ubuntu Linux, and Windows, and each operating system will test with Python 3.7, 3.8, and 3.9.
 
+![CI Running](images/ci-running.png)
+
 Deployment (the CD part) is controlled by the pypi_publish.yaml file and will happen automatically any time a new relase is created with a tag in the format of v*.*.*. For example creating a release with a tag of v0.1.0 will trigger deployment.
 
 ![Create Release](images/create-release.png)
