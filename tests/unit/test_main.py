@@ -1,17 +1,17 @@
 import pytest
 
-from tbd_example.main import add
+from tbd_example.main import factors_of
 
 
 @pytest.mark.parametrize(
-    "nums, expected",
+    "number, expected",
     [
-        ([2, 2], 4),
-        ([2, 1.5, 3], 6.5),
-        ([1.2, 1.2], 2.4),
+        (2, [1, 2]),
+        (12, [1, 2, 3, 4, 6, 12]),
+        (25, [1, 5, 25]),
     ],
 )
-def test_add(nums, expected):
-    got = add(nums)
+def test_add(number, expected):
+    got = factors_of(number)
 
     assert got == expected
