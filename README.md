@@ -39,3 +39,47 @@ If you need to include passwords or other information that should not be viewabl
     ![Secret Information](https://raw.githubusercontent.com/sanders41/tbd-example/main/images/secret-info.png)
 
     ![Secret in YAML file](https://raw.githubusercontent.com/sanders41/tbd-example/main/images/secret-in-yaml.png)
+
+## Dependency Management
+
+This repositry uses [Poetry](https://python-poetry.org/) for dependency management and deployment. If instead you want use pip the work flow files can be updated for that. As an example, assuming you have a requirements.txt file, linting.yaml file would change to:
+
+```yaml
+name: Linting
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install Dependencies
+      run: |
+        python3 -m pip install -U pip
+        python3 -m pip install -r requirements.txt
+    - name: Isort check
+      run: |
+        python3 -m isort tbd_example tests --check-only
+    - name: Black check
+      run: |
+        python3 -m black tbd_example tests --check
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        python3 -m flake8 tbd_example tests --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        python3 -m flake8 tbd_example tests --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
+    - name: mypy check
+      run: |
+        python3 -m mypy tbd_example
+```
