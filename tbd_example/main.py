@@ -1,15 +1,17 @@
 from __future__ import annotations
 
-from typing import Union
 
+def factors_of(number: int) -> list[int]:
+    """
+    Factor an integer into a list where the product of the list is equal to the original number.
+    """
 
-def add(number_list: list[Union[int, float]]) -> float:
-    return sum(number_list)
+    return [i for i in range(1, number + 1) if number % i == 0]
 
 
 def main() -> None:
-    nums = [2, 2, 2.5]
-    print(add(nums))  # noqa: T001
+    number = 25
+    print(factors_of(number))  # noqa: T001
 
 
 if __name__ == "__main__":
