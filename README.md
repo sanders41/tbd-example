@@ -12,7 +12,7 @@ In these example files linting and testing (the CI part) are controlled by the l
 
 ![CI Running](https://raw.githubusercontent.com/sanders41/tbd-example/main/images/ci-running.png)
 
-Deployment (the CD part) is controlled by the pypi_publish.yaml file and will happen automatically any time a new relase is created with a tag in the format of v*.*.*. For example creating a release with a tag of v0.1.0 will trigger deployment.
+Deployment (the CD part) is controlled by the pypi_publish.yaml file and will happen automatically any time a new relase is created with a tag in the format of v\*.\*.\*. For example creating a release with a tag of v0.1.0 will trigger deployment.
 
 ![Create Release](https://raw.githubusercontent.com/sanders41/tbd-example/main/images/create-release.png)
 
