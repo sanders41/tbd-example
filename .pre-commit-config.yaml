@@ -18,7 +18,7 @@ repos:
       language_version: python3.8
       args: [--line-length=100]
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.800
+    rev: v0.812
     hooks:
     - id: mypy
       files: tbd_example/
