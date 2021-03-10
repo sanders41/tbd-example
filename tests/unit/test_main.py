@@ -14,4 +14,4 @@ from tbd_example.main import factors_of
 def test_add(number, expected):
     got = factors_of(number)
 
-    assert got == 1
+    assert got == expected
